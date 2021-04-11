@@ -6,10 +6,10 @@ class MyBoxLayout(BoxLayout):
     ...
 
 
-class Exemplo_2App(App):  # Começa com 'Exemplo_2' como o arquivo .kv
+class Example_2App(App):  # Começa com 'Example_2' como o arquivo .kv
     def build(self):
         return MyBoxLayout()
 
 
 if __name__ == '__main__':
-    Exemplo_2App().run()
+    Example_2App().run()
