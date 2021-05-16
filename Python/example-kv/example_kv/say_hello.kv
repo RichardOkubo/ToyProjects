@@ -1,0 +1,21 @@
+<MyBoxLayout>:
+  orientation: "vertical"
+
+  BoxLayout:
+    Label:
+      text: "What's your name?"
+      font_size: 25
+    TextInput:
+      font_size: 25
+      multiline: False
+      on_text: root.username = args[1]
+  
+  BoxLayout:
+    Button:
+      text: "Greeting"
+      font_size: 25
+      on_press: root.greeting()
+
+  BoxLayout:
+    Label:
+      text: root.greets
