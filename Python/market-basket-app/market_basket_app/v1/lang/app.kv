@@ -1,0 +1,100 @@
+WindowManager:
+
+    InWindow:
+
+    OutWindow:
+
+
+<InWindow>:
+    name: "in"
+
+    BoxLayout:
+        orientation: "vertical"
+        
+        Button:
+        	text: "X"
+        	size_hint_y: .5
+        	on_release: app.root.quit()
+
+        Label:
+            text: "Product"
+            font_size: 30
+            size_hint_y: .5
+
+        TextInput:
+            font_size: 30
+            multiline: False
+            on_text: root.product = args[1]
+
+        Label:
+            text: "Price"
+            font_size: 30
+            size_hint_y: .5
+
+        TextInput:
+            font_size: 30
+            multiline: False
+            on_text: root.price = args[1]
+
+        Label:
+            text: "Quantity"
+            font_size: 30
+            size_hint_y: .5
+
+        TextInput:
+            font_size: 30
+            multiline: False
+            on_text: root.quantity = args[1]
+
+        Label:
+            text: "Market"
+            font_size: 30
+            size_hint_y: .5
+
+        TextInput:
+            font_size: 30
+            multiline: False
+            on_text: root.market = args[1]
+
+        BoxLayout:
+            size_hint_y: .5
+
+            Button:
+                text: "Commit"
+                font_size: 30
+                on_release: app.root.commit()
+
+            Button:
+                text: "Show"
+                font_size: 30
+                on_release:
+                    app.root.current = "out"
+                    root.manager.transition.direction = "left"
+
+
+<OutWindow>:
+    name: "out"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        RV:
+
+        Button:
+            text: "Return"
+            font_size: 30
+            size_hint_y: .08
+            on_release:
+                app.root.current = "in"
+                root.manager.transition.direction = "right"
+
+
+<RV>:
+    viewclass: "Button"
+
+    RecycleBoxLayout:
+        orientation: "vertical"
+        default_size: None, dp(50)
+        default_size_hint: 1, None
+        height: self.minimum_height
+        size_hint_y: None
