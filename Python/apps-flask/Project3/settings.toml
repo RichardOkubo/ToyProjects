@@ -1,0 +1,14 @@
+[default]
+DEBUG = false
+SQLALCHEMY_DATABASE_URI = "sqlite:///database.db"
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+EXTENSIONS = [
+    "src.ext.database:init_app",
+    "src.ext.manager:init_app",
+    "src.ext.auth:init_app",
+    "src.ext.main:init_app",
+]
+SECRET_KEY = "secret-key-goes-here"
+
+[development]
+DEBUG = true

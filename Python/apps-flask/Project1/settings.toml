@@ -1,0 +1,26 @@
+[default]
+DEBUG = false
+EXTENSIONS = [
+    "src.ext.auth:init_app",
+    "src.ext.database:init_app",
+    "src.ext.blueprint:init_app",
+]
+SECRET_KEY = "secret"
+
+[development]
+DEBUG = true
+EXTENSIONS = [
+    "src.ext.auth:init_app",
+    "src.ext.database:init_app",
+    "src.ext.toolbar:init_app",
+    "src.ext.blueprint:init_app",
+]
+DEBUG_TB_TEMPLATE_EDITOR_ENABLED = true
+DEBUG_TB_PROFILER_ENABLED = true
+DEBUG_TB_INTERCEPT_REDIRECTS = false
+SQLALCHEMY_DATABASE_URI = "sqlite:///database.db"
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+
+[production]
+SQLALCHEMY_DATABASE_URI = "sqlite:///database.db"
+SQLALCHEMY_TRACK_MODIFICATIONS = false

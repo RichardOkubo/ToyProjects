@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Dashboard</title>
+{% endblock title %}
+
+{% block content %}
+    <h1>'{{ current_user.email }}' is logged in</h1>
+    <a href="{{ url_for('home') }}">Home</a><br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+{% endblock content %}
